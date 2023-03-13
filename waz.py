@@ -20,6 +20,12 @@ def waz():
     jablkoY=random.randint(0,19)*30
     #liczba punktów
     punkty=0
+    #kierunek początkowy węża
+    #[1,0] - ruch w prawo
+    #[0,1] - ruch w dół
+    #[-1,0] - ruch w lewo
+    #[0,-1] - ruch w górę
+    kierunek=[1,0]
     #pętla while sprawdza czy warunek w zmiennej run jest prawdziwy, jak jest nieprawdziwy kończy swoje działanie
     while(run):
         #Wypełnienie okna kolorem
@@ -34,18 +40,25 @@ def waz():
                 #obsługa zdarzeń klawiatury i zmiana pozycji węża
             elif zdarzenia.type==pygame.KEYDOWN:
                 if zdarzenia.key==pygame.K_RIGHT:
-                    zmiennaX=zmiennaX+30
+                    kierunek=[1,0]
                 elif zdarzenia.key==pygame.K_LEFT:
-                    zmiennaX=zmiennaX-30
+                    kierunek=[-1,0]
                 elif zdarzenia.key==pygame.K_UP:
-                    zmiennaY=zmiennaY-30
+                    kierunek=[0,-1]
                 elif zdarzenia.key==pygame.K_DOWN:
-                    zmiennaY=zmiennaY+30
-                #sprawdzanie krawędzi
-                if zmiennaX>=600:
-                    zmiennaX=0
-                if zmiennaX<0:
-                    zmiennaX=600
+                    kierunek=[0,1]
+        #ustalenie nowej pozycji węża
+        zmiennaX=zmiennaX+kierunek[0]*30;
+        zmiennaY=zmiennaY+kierunek[1]*30;        
+        #sprawdzanie krawędzi
+        if zmiennaX>=600:
+            zmiennaX=0
+        if zmiennaX<0:
+            zmiennaX=600-30
+        if zmiennaY>=600:
+            zmiennaY=0
+        if zmiennaY<0:
+            zmiennaY=600-30
         #rysowanie węża
         #definiujemy kształ węża
         ksztaltWaz=pygame.Rect((zmiennaX,zmiennaY),(30,30))
