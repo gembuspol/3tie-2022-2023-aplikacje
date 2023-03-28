@@ -11,6 +11,16 @@ class WazKlas():
     #ustalanie kierunku węża
     def setDirection(self, direction):
         self.kierunek=direction
+    
+    #dodawanie punktów
+    def addScore(self):
+        self.punkty=self.punkty+1
+    #zerowanie punktów
+    def clearScore(self):
+        self.punkty=0
+    #dodawanie długości węża
+    def addLenght(self):
+        self.dlugosc+=1
     #pobieranie współrzednych głowy węża
     def getHeadPosition(self):
         return self.pozycje[-1]
