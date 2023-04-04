@@ -1,5 +1,7 @@
 import random
 
+import pygame
+
 class Jablko():
     #konstruktor klasy
     def __init__(self):
@@ -9,6 +11,7 @@ class Jablko():
     def randomPosition(self):
         jablkoX=random.randint(0,19)*30
         jablkoY=random.randint(0,19)*30
+        self.setCoordinates(jablkoX,jablkoY)
 
     #pobranie pozycji jabłka
     def getCoordinates(self):
@@ -17,3 +20,7 @@ class Jablko():
     #ustawienie pozycji jabłka
     def setCoordinates(self,x,y):
         self.pozycjaJablka[0]=(x,y)
+
+    #rysowanie jabłka
+    def drawApple(self, oknoGry):
+        pygame.draw.circle(oknoGry,(255,0,0),(self.pozycjaJablka[0][0]+15,self.pozycjaJablka[0][1]+15),15)
