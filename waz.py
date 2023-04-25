@@ -9,6 +9,7 @@ import jablko
 
 #tworzenie obiektu wąż
 obiektWaz1=wazKlasa.WazKlas()
+#tworzenie obiektu drugiego węża
 
 #utowrzenie obiektów jabłek
 #określenie ile będzie jabłek
@@ -85,4 +86,4 @@ def waz():
         pygame.display.update()
 
 #wywołanie funkcji, pozwala na uruchomienie gry
-waz()
+#waz()
