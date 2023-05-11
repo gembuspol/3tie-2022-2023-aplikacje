@@ -6,7 +6,7 @@ import waz
 def wlaczGre():
     waz.waz()
 def zmienJablka(tekst,ilosc):
-    print("a")
+    waz.iloscJablek=ilosc;
 def main():
     pygame.init()
     #utworzenie okna gry i okreslenie jego rozmiarów
