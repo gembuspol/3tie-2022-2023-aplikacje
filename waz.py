@@ -16,7 +16,10 @@ obiektWaz2=wazKlasa.WazKlas()
 #utowrzenie obiektów jabłek
 #określenie ile będzie jabłek
 iloscJablek=1
-
+def ustawKolorWaz1(kolor):
+    obiektWaz1.setColor(kolor)
+def ustawKolorWaz2(kolor):
+    obiektWaz2.setColor(kolor)
 
 #utworzenie funkcji waz
 def waz():
