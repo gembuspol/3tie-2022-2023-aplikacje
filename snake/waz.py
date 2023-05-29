@@ -5,7 +5,7 @@ import pygame
 import wazKlasa
 
 #importujemy kod z pliku jablko
-import jablko
+import snake.jablko as jablko
 
 #okreslenie rozdzielczości - ile jest pól/kratek na planszy
 rozdzielczosc=19
